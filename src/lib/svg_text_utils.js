@@ -20,7 +20,7 @@ exports.convertToTspans = function(_context, gd, _callback) {
     // allow some elements to prohibit it by attaching 'data-notex' to the original
     var tex = (!_context.attr('data-notex')) &&
         gd && gd._context.typesetMath &&
-        (typeof MathJax !== 'undefined') &&
+        MathJax.version &&
         str.match(FIND_TEX);
 
     var parent = d3.select(_context.node().parentNode);
